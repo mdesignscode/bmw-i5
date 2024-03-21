@@ -1,0 +1,8 @@
+#features {
+  background-color: hsla(30, 19%, 27%, 1);
+    background-image:
+      radial-gradient(at 34% 10%, hsla(28, 39%, 44%, 1) 0px, transparent 50%),
+      radial-gradient(at 4% 0%, hsla(27, 0%, 0%, 1) 0px, transparent 50%),
+      radial-gradient(at 70% 78%, hsla(31, 36%, 33%, 1) 0px, transparent 50%),
+      radial-gradient(at 30% 11%, hsla(0, 4%, 15%, 1) 0px, transparent 50%);
+}

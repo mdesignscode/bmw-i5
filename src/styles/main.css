@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.transition-all {
+  transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+body,
+html {
+  @apply overflow-hidden;
+}
+
+.bg-home {
+  background: linear-gradient(90deg, #6c757d, #646c74, #5b636b, #535b62, #4b5259, #434a51, #3c4248, #343a40)
+}
+
+@font-face {
+  font-family: 'PassionOne-Black';
+  src: local('PassionOne-Black'), url('/fonts/Passion_One/PassionOne-Black.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins-Regular.ttf'), url('/fonts/Poppins/Poppins-Regular.ttf') format('ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: local('Poppins-Bold.ttf'), url('/fonts/Poppins/Poppins-Bold.ttf') format('ttf');
+}
