@@ -1,5 +1,5 @@
 .nav-link {
-  @apply relative;
+  @apply relative hover:opacity-50;
 }
 
 .nav-link.active::after {

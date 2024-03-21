@@ -1,11 +1,10 @@
 import classNames from "classnames";
 import { sections } from "./constants";
-import { GlobalContext } from "../context/global";
-import { useContext } from "react";
+import { useGlobalStore } from "../context/global";
 import { Transition } from "@headlessui/react";
 
 export default function PageIndicators() {
-  const { currentPage, setCurrentPage } = useContext(GlobalContext);
+  const { currentPage, setNextPage } = useGlobalStore();
 
   return (
     <Transition
@@ -22,16 +21,16 @@ export default function PageIndicators() {
       <div role="navigation" className="my-auto space-y-6 px-9">
         {sections.map(({ url, name }) => (
           <a
-            onClick={() => setCurrentPage({ name: url })}
+            onClick={() => setNextPage(url)}
             href={url}
             key={name}
             className={classNames(
               "bg-white block transition-all",
               {
-                "w-3 h-10 rounded-lg": currentPage.name === url,
+                "w-3 h-10 rounded-lg": currentPage === url,
               },
               {
-                "size-3 rounded-full opacity-70": currentPage.name !== url,
+                "size-3 rounded-full opacity-70": currentPage !== url,
               }
             )}
             aria-label={`Navigate to ${name}`}

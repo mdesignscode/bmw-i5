@@ -1,12 +1,12 @@
 import { Transition } from "@headlessui/react";
-import { useContext, useState } from "react";
+import classNames from "classnames";
+import { useState } from "react";
 import feature1 from "../../assets/images/feature1.avif";
 import feature2 from "../../assets/images/feature2.avif";
 import feature3 from "../../assets/images/feature3.avif";
 import feature4 from "../../assets/images/feature4.avif";
-import { GlobalContext } from "../../context/global";
+import { useGlobalStore } from "../../context/global";
 import "../../styles/features.css";
-import classNames from "classnames";
 
 const features = [
   {
@@ -32,47 +32,54 @@ const features = [
 ];
 
 export default function Features() {
-  const { currentPage } = useContext(GlobalContext),
-    [currentSlide, setCurrentSlide] = useState(0)
+  const { currentPage } = useGlobalStore(),
+    [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <Transition
-      appear={true}
-      show={currentPage.name === "#features"}
-      id="features"
-      className=""
-    >
-      {features.map((feature, i) => (
-        <FeatureSlide slideIndex={currentSlide} feature={feature} index={i} />
-      ))}
-
-      <Transition.Child
-        enter={`transform opacity transition-all duration-500 ease-in-out`}
-        enterFrom="translate-y-full opacity-0"
-        enterTo="translate-y-0 opacity-1"
-        leave="transform opacity transition-all duration-500 ease-in-out"
-        leaveFrom="translate-y-0 opacity-1"
-        leaveTo="translate-y-full opacity-0"
-        className="absolute bottom-32 left-24 flex gap-4"
+    <>
+      <Transition
+        appear={true}
+        show={currentPage === "#features"}
+        id="features"
       >
-        {features.map((_, i) => (
-          <button
-            className={classNames(
-              "focus:outline-white w-12 h-12 border-2 font-bold cursor-none hover:text-white duration-700 hover:bg-transparent hover:border-transparent transition-all rounded-full p-4 text-2xl grid place-content-center",
-              {
-                "bg-white text-black": currentSlide === i,
-              },
-              {
-                "border-white bg-transparent": currentSlide !== i,
-              }
-            )}
-            onClick={() => setCurrentSlide(i)}
-          >
-            {i + 1}
-          </button>
+        {features.map((feature, i) => (
+          <FeatureSlide
+            key={feature.name}
+            slideIndex={currentSlide}
+            feature={feature}
+            index={i}
+          />
         ))}
-      </Transition.Child>
-    </Transition>
+
+        <Transition.Child
+          enter={`transform opacity transition-all duration-500 ease-in-out`}
+          enterFrom="translate-y-full opacity-0"
+          enterTo="translate-y-0 opacity-1"
+          leave="transform opacity transition-all duration-500 ease-in-out"
+          leaveFrom="translate-y-0 opacity-1"
+          leaveTo="translate-y-full opacity-0"
+          className="absolute bottom-32 left-24 flex gap-4"
+        >
+          {features.map((_, i) => (
+            <button
+              key={i}
+              className={classNames(
+                "focus:outline-white w-12 h-12 border-2 font-bold cursor-none hover:text-white duration-700 hover:bg-transparent hover:border-transparent transition-all rounded-full p-4 text-2xl grid place-content-center",
+                {
+                  "bg-white text-black": currentSlide === i,
+                },
+                {
+                  "border-white bg-transparent": currentSlide !== i,
+                }
+              )}
+              onClick={() => setCurrentSlide(i)}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </Transition.Child>
+      </Transition>
+    </>
   );
 }
 

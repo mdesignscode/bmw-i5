@@ -1,12 +1,11 @@
-import { useContext } from "react";
-import { GlobalContext } from "../context/global";
+import { useGlobalStore } from "../context/global";
 import { sections } from "./constants";
 import { Transition } from "@headlessui/react";
 import classNames from "classnames";
 import "../styles/nav.css";
 
 export default function Navbar() {
-  const { setCurrentPage, currentPage } = useContext(GlobalContext);
+  const { setNextPage, currentPage } = useGlobalStore();
 
   return (
     <Transition
@@ -26,10 +25,10 @@ export default function Navbar() {
           className={classNames(
             "transition-all nav-link",
             {
-              "active": currentPage.name === url,
+              "active": currentPage === url,
             }
           )}
-          onClick={() => setCurrentPage({ name: url })}
+          onClick={() => setNextPage(url)}
           key={name}
           href={url}
         >

@@ -1,21 +1,21 @@
-import { Fragment, useContext } from "react";
+import { Transition } from "@headlessui/react";
+import { Fragment } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import hero from "../../assets/images/BMW-i5-eDrive40.png";
-import { GlobalContext } from "../../context/global";
-import HeroDescription from "./description";
-import { Transition } from "@headlessui/react";
+import { useGlobalStore } from "../../context/global";
 import "../../styles/home.css";
+import HeroDescription from "./description";
 
 export default function Home() {
-  const { currentPage } = useContext(GlobalContext);
+  const { currentPage, setNextPage } = useGlobalStore();
 
   return (
     <Transition
       as="section"
-      show={currentPage.name === "#home"}
+      show={currentPage === "#home"}
       appear={true}
       id="home"
-      className="bg-home h-full w-full overflow-hidden px-24 pt-28"
+      className="bg-home h-[100dvh] w-full flex-none overflow-hidden px-24 pt-28"
     >
       <Transition.Child
         enter="transform duration-500 ease-in-out opacity transition-all"
@@ -30,10 +30,14 @@ export default function Home() {
       >
         <h1>
           <div>BMW i5</div>
-          <div className="-mt-8">eDrive-40</div>
+          <div className="-mt-8">eDrive40</div>
         </h1>
 
-        <a href="#features" className="flex items-center gap-4">
+        <a
+          onClick={() => setNextPage("#features")}
+          href="#features"
+          className="flex items-center gap-4"
+        >
           Explore <BiArrowBack size={50} />
         </a>
       </Transition.Child>

@@ -1,23 +1,11 @@
-"use client";
+import { create } from "zustand";
 
-import { createContext, useState } from "react";
-import { IGlobalContext, initialGlobalContext } from "./global.initial";
-
-export const GlobalContext = createContext(initialGlobalContext);
-
-export function GlobalProvider({ children }: { children: React.ReactNode }) {
-  // global state
-  const [currentPage, setCurrentPage] = useState(
-    initialGlobalContext.currentPage
-  );
-
-  // store object
-  const store: IGlobalContext = {
-    currentPage,
-    setCurrentPage,
-  };
-
-  return (
-    <GlobalContext.Provider value={store}>{children}</GlobalContext.Provider>
-  );
+interface GlobalState {
+  currentPage: string;
+  setNextPage: (page: string) => void;
 }
+
+export const useGlobalStore = create<GlobalState>()((set) => ({
+  currentPage: location.hash,
+  setNextPage: (page) => set(() => ({ currentPage: page })),
+}));

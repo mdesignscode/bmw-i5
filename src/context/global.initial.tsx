@@ -1,17 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
 
-type TCurrentPage = {
-  name: string;
-};
-
 export interface IGlobalContext {
-  currentPage: TCurrentPage;
-  setCurrentPage: Dispatch<SetStateAction<TCurrentPage>>;
+  currentPage: string;
+  setCurrentPage: Dispatch<SetStateAction<string>>;
 }
 
 export const initialGlobalContext: IGlobalContext = {
-  currentPage: {
-    name: location.hash,
-  },
+  currentPage: location.hash,
   setCurrentPage: () => {},
 };
