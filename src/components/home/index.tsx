@@ -15,7 +15,7 @@ export default function Home() {
       show={currentPage.name === "#home"}
       appear={true}
       id="home"
-      className="bg-home h-full w-full overflow-hidden px-20 pt-28"
+      className="bg-home h-full w-full overflow-hidden px-24 pt-28"
     >
       <Transition.Child
         enter="transform duration-500 ease-in-out opacity transition-all"
@@ -25,15 +25,15 @@ export default function Home() {
         leaveFrom="translate-y-0 opacity-1"
         leaveTo="-translate-y-full opacity-0"
         as="section"
-        className="flex flex-col"
+        className="flex flex-col font-bold"
         id="hero-text"
       >
         <h1>
           <div>BMW i5</div>
-          <div>eDrive-40</div>
+          <div className="-mt-8">eDrive-40</div>
         </h1>
 
-        <a href="#home" className="flex items-center gap-4">
+        <a href="#features" className="flex items-center gap-4">
           Explore <BiArrowBack size={50} />
         </a>
       </Transition.Child>
@@ -50,7 +50,7 @@ export default function Home() {
         as={Fragment}
       >
         <img
-          className="absolute right-8 bottom-16"
+          className="absolute right-16 bottom-16"
           src={hero}
           alt="BMW i5 eDrive40"
         />

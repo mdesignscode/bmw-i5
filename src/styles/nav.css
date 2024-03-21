@@ -1,0 +1,13 @@
+.nav-link {
+  @apply relative;
+}
+
+.nav-link.active::after {
+  @apply h-1 hover:opacity-50;
+  content: "";
+}
+
+.nav-link::after {
+  @apply bg-neutral-200 h-0 hover:h-1 transition-all z-10 w-full absolute -bottom-1 left-0;
+  content: "";
+}

@@ -53,7 +53,7 @@ export default function Features() {
         leave="transform opacity transition-all duration-500 ease-in-out"
         leaveFrom="translate-y-0 opacity-1"
         leaveTo="translate-y-full opacity-0"
-        className="absolute bottom-32 left-16 flex gap-4"
+        className="absolute bottom-32 left-24 flex gap-4"
       >
         {features.map((_, i) => (
           <button
@@ -89,7 +89,7 @@ function FeatureSlide({
     <Transition
       appear={true}
       show={index === slideIndex}
-      className="h-[100dvh] text-white grid grid-cols-2 items-center"
+      className="h-[100dvh] text-white grid grid-cols-2 items-center px-8"
     >
       <Transition.Child
         enter={`transform opacity transition-all duration-500 ease-in-out`}
@@ -107,6 +107,7 @@ function FeatureSlide({
           <p className="text-xl">{text}</p>
         </div>
       </Transition.Child>
+
       <Transition.Child
         enter={`transform opacity transition-all duration-500 ease-in-out`}
         enterFrom="translate-x-[100px] opacity-0"
