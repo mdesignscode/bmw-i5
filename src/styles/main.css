@@ -12,7 +12,14 @@ html {
 }
 
 .bg-home {
-  background: linear-gradient(90deg, #6c757d, #646c74, #5b636b, #535b62, #4b5259, #434a51, #3c4248, #343a40)
+  background: rgb(2, 0, 36);
+  background: linear-gradient(180deg, rgba(38, 38, 38, 0.7) 30%, rgba(38, 38, 38, 1) 100%);
+}
+
+.bg-about {
+  background: url('/bmw-hq.webp') no-repeat;
+  background-position: center;
+  transition: all ease-in 1s;
 }
 
 @font-face {

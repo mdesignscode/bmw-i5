@@ -18,7 +18,7 @@ export default function Navbar() {
       leave="transform opacity transition-all duration-500 ease-in-out"
       leaveFrom="translate-y-0 opacity-0"
       leaveTo="-translate-y-full opacity-1"
-      className="absolute top-4 flex justify-center w-full gap-4 text-xl uppercase tracking-widest font-poppinsBold"
+      className="absolute top-4 flex justify-center w-full gap-4 text-xl uppercase tracking-widest font-poppinsBold z-50"
     >
       {sections.map(({ name, url }) => (
         <a

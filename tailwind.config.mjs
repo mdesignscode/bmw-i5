@@ -7,7 +7,8 @@ const config = {
         passionOneBlack: ["PassionOne-Black", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         poppinsBold: ["Poppins-Bold", "sans-serif"],
-      }
+      },
+      
     },
   },
   plugins: [],

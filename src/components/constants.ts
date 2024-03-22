@@ -7,4 +7,8 @@ export const sections = [
     name: "Features",
     url: "#features",
   },
+  {
+    name: "About Us",
+    url: "#about",
+  },
 ];

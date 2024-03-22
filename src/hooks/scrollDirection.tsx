@@ -4,15 +4,15 @@ import { useGlobalStore } from "../context/global";
 
 export default function useScrollDirection() {
   const { setNextPage } = useGlobalStore(),
-  [nextSection, setNextSection] = useState(location.hash)
+    [nextSection, setNextSection] = useState(location.hash);
 
   useEffect(() => {
-      location.hash = nextSection;
-      setNextPage(nextSection)
-    }, [nextSection, setNextPage]);
+    location.hash = nextSection;
+    setNextPage(nextSection);
+  }, [nextSection, setNextPage]);
 
   useEffect(() => {
-    const container = document.getElementById("container")
+    const container = document.getElementById("container");
 
     if (!container) throw new Error();
 
@@ -31,9 +31,9 @@ export default function useScrollDirection() {
           ? sections[currentPageIndex - 1]?.url
           : sections[currentPageIndex + 1]?.url;
 
-      if (!nextPage) return
+      if (!nextPage) return;
 
-      setNextSection(nextPage)
+      setNextSection(nextPage);
     };
 
     container.addEventListener("wheel", (e) => handleScroll(e));
@@ -41,6 +41,4 @@ export default function useScrollDirection() {
       container.removeEventListener("wheel", (e) => handleScroll(e));
     };
   }, [setNextPage]);
-
-  return nextSection;
 }
