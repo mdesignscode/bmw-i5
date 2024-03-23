@@ -12,12 +12,14 @@ export default function Home() {
   return (
     <Transition
       as="section"
+      unmount={false}
       show={currentPage === "#home"}
       appear={true}
       id="home"
-      className="bg-home h-[100dvh] w-full flex-none overflow-hidden px-24 pt-28"
+      className="h-[100dvh] w-full flex-none overflow-hidden px-24 pt-28 bg-home"
     >
       <Transition.Child
+        unmount={false}
         enter="transform duration-500 ease-in-out opacity transition-all"
         enterFrom="-translate-y-[100px] opacity-0"
         enterTo="translate-y-0 opacity-1"
@@ -30,7 +32,7 @@ export default function Home() {
       >
         <h1>
           <div>BMW i5</div>
-          <div className="-mt-8">eDrive40</div>
+          <div className="-mt-8 text-slate-500">eDrive40</div>
         </h1>
 
         <a
@@ -45,6 +47,7 @@ export default function Home() {
       <HeroDescription />
 
       <Transition.Child
+        unmount={false}
         enter={`transform opacity transition-all duration-500 ease-in-out`}
         enterFrom="translate-x-[100px] opacity-0"
         enterTo="translate-x-0 opacity-1"

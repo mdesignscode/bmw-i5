@@ -41,6 +41,12 @@ export default function Features() {
         appear={true}
         show={currentPage === "#features"}
         id="features"
+        enter={`transform opacity transition-all duration-500 ease-in-out`}
+        enterFrom="opacity-0"
+        enterTo="opacity-1"
+        leave="transform opacity transition-all duration-500 ease-in-out"
+        leaveFrom="opacity-1"
+        leaveTo="opacity-0"
       >
         {features.map((feature, i) => (
           <FeatureSlide

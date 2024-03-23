@@ -13,12 +13,14 @@ export default function AboutUs() {
       enterFrom="opacity-0 [background-position:center]"
       enterTo="opacity-1 [background-position:top]"
       leave="transform opacity transition-all duration-150 ease-in-out"
-      leaveFrom="opacity-1"
-      leaveTo="opacity-0"
+      leaveFrom="opacity-1 [background-position:top]"
+      leaveTo="opacity-0 [background-position:center]"
+      unmount={false}
     >
       <div className="absolute w-full h-full top-0 left-0 bg-neutral-800 opacity-40" />
       <div className="relative z-10 text-center h-full px-16 pt-36 flex flex-col w-3/4 justify-center mx-auto gap-6">
         <Transition.Child
+          unmount={false}
           as="h1"
           enter={`transition-all duration-1000 ease-in-out`}
           enterFrom="-translate-y-full opacity-0"
@@ -31,6 +33,7 @@ export default function AboutUs() {
           Our story
         </Transition.Child>
         <Transition.Child
+          unmount={false}
           enter={`transition-all duration-1000 ease-in-out`}
           enterFrom="translate-y-[100px] opacity-0"
           enterTo="translate-y-0 opacity-1"

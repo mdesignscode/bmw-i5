@@ -12,14 +12,9 @@ html {
 }
 
 .bg-home {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(180deg, rgba(38, 38, 38, 0.7) 30%, rgba(38, 38, 38, 1) 100%);
-}
-
-.bg-about {
-  background: url('/bmw-hq.webp') no-repeat;
-  background-position: center;
-  transition: all ease-in 1s;
+  background: url(/edan-cohen-gjmbiBK9kI4-unsplash.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 @font-face {

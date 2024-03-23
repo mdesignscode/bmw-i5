@@ -27,6 +27,7 @@ export default function HeroDescription() {
     <section className="absolute bottom-0 left-0 mx-24 flex items-end gap-4 overflow-y-hidden z-10">
       {descriptions.map(({ text, title }, i) => (
         <Transition.Child
+          unmount={false}
           enter={`transform transition duration-500 ease-in-out}`}
           enterFrom="translate-y-full"
           enterTo="translate-y-0"
