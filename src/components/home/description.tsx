@@ -19,12 +19,21 @@ const descriptions = [
 ];
 
 export default function HeroDescription() {
+  return (
+    <>
+      <HeroDescriptionDesktop />
+      <HeroDescriptionMobile />
+    </>
+  );
+}
+
+function HeroDescriptionDesktop() {
   const [showDescription, setShowingDescription] = useState(
     descriptions.map(() => false)
   );
 
   return (
-    <section className="absolute bottom-0 left-0 mx-24 flex items-end gap-4 overflow-y-hidden z-10">
+    <section className="absolute hidden md:flex bottom-0 left-0 mx-24 items-end gap-4 overflow-y-hidden z-10">
       {descriptions.map(({ text, title }, i) => (
         <Transition.Child
           unmount={false}
@@ -70,6 +79,26 @@ export default function HeroDescription() {
           </p>
         </Transition.Child>
       ))}
+    </section>
+  );
+}
+
+function HeroDescriptionMobile() {
+  return (
+    <section className="flex-1 self-end flex md:hidden gap-4 text-gray-300 italic text-sm pr-6 pt-8">
+      <ul className="flex-1">
+        <li className="mr-auto font-semibold">Max HP</li>
+        <li className="mr-auto font-semibold">0-60 MPH</li>
+        <li className="mr-auto font-semibold">Starting MRSP</li>
+        <li className="mr-auto font-semibold">Top Speed</li>
+      </ul>
+
+      <ul>
+        <li>5.2 sec</li>
+        <li>389</li>
+        <li>$70,100</li>
+        <li>130 MPH</li>
+      </ul>
     </section>
   );
 }

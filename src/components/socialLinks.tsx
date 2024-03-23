@@ -12,7 +12,7 @@ export default function SocialLinks() {
       leave="transform opacity transition-all duration-500 ease-in-out"
       leaveFrom="translate-y-0 opacity-0"
       leaveTo="translate-y-full opacity-1"
-      className="absolute left-6 bottom-8 grid gap-4 z-50"
+      className="absolute left-3 md:left-6 bottom-8 grid gap-4 z-50"
     >
       <a
         target="_blank"

@@ -11,7 +11,7 @@ function App() {
   useScrollDirection();
   return (
     <div
-      className="h-[100dvh] w-screen bg-neutral-500 overflow-y-hidden text-white"
+      className="h-[100dvh] w-screen bg-slate-500 overflow-y-hidden text-white"
       id="container"
     >
       {/* shared layout */}

@@ -41,6 +41,7 @@ export default function Features() {
         appear={true}
         show={currentPage === "#features"}
         id="features"
+        as="section"
         enter={`transform opacity transition-all duration-500 ease-in-out`}
         enterFrom="opacity-0"
         enterTo="opacity-1"
@@ -64,13 +65,13 @@ export default function Features() {
           leave="transform opacity transition-all duration-500 ease-in-out"
           leaveFrom="translate-y-0 opacity-1"
           leaveTo="translate-y-full opacity-0"
-          className="absolute bottom-32 left-24 flex gap-4"
+          className="absolute left-1/2 bottom-6 -translate-x-1/2 md:translate-x-0 md:bottom-32 md:left-24 flex gap-3 md:gap-4"
         >
           {features.map((_, i) => (
             <button
               key={i}
               className={classNames(
-                "focus:outline-white w-12 h-12 border-2 font-bold cursor-none hover:text-white duration-700 hover:bg-transparent hover:border-transparent transition-all rounded-full p-4 text-2xl grid place-content-center",
+                "focus:outline-white size-10 md:size-12 border-2 font-bold cursor-none hover:text-white duration-700 hover:bg-transparent hover:border-transparent transition-all rounded-full p-4 text-lg md:text-2xl grid place-content-center",
                 {
                   "bg-white text-black": currentSlide === i,
                 },
@@ -102,7 +103,7 @@ function FeatureSlide({
     <Transition
       appear={true}
       show={index === slideIndex}
-      className="h-[100dvh] text-white grid grid-cols-2 items-center px-8"
+      className="h-[100dvh] text-white flex flex-col md:grid justify-center grid-rows-2 md:grid-rows-none md:grid-cols-2 items-center md:px-8"
     >
       <Transition.Child
         enter={`transform opacity transition-all duration-500 ease-in-out`}
@@ -111,13 +112,13 @@ function FeatureSlide({
         leave="transform opacity transition-all duration-500 ease-in-out"
         leaveFrom="translate-x-0 opacity-0"
         leaveTo="-translate-x-full opacity-1"
-        className="px-16 flex flex-col h-1/2"
+        className="px-16 flex flex-col md:h-1/2"
       >
         <div>
-          <h1 className="text-5xl font-passionOneBlack font-bold mb-4">
+          <h1 className="text-3xl md:text-5xl font-passionOneBlack font-bold mb-4">
             {name}
           </h1>
-          <p className="text-xl">{text}</p>
+          <p className="md:text-xl">{text}</p>
         </div>
       </Transition.Child>
 
@@ -128,7 +129,7 @@ function FeatureSlide({
         leave="transform opacity transition-all duration-500 ease-in-out"
         leaveFrom="translate-x-0 opacity-0"
         leaveTo="translate-x-full opacity-1"
-        className="m-16 overflow-hidden cursor-none"
+        className="m-16 overflow-hidden cursor-none rounded-xl md:rounded-none"
       >
         <img
           src={image}

@@ -18,7 +18,7 @@ export default function PageIndicators() {
       leaveTo="translate-x-full opacity-1"
       className="absolute right-0 z-50 h-full flex flex-col"
     >
-      <div role="navigation" className="my-auto space-y-6 px-9">
+      <div role="navigation" className="my-auto space-y-6 px-4 md:px-9">
         {sections.map(({ url, name }) => (
           <a
             onClick={() => setNextPage(url)}
@@ -27,7 +27,10 @@ export default function PageIndicators() {
             className={classNames(
               "bg-white block transition-all",
               {
-                "w-3 h-10 rounded-lg": currentPage === url,
+                "w-3 h-10 rounded-lg":
+                  name === "Home"
+                    ? ["", "#home"].includes(currentPage)
+                    : currentPage === url,
               },
               {
                 "size-3 rounded-full opacity-70": currentPage !== url,
