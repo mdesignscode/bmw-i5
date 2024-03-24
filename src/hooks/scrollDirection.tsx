@@ -116,8 +116,8 @@ export default function useScrollDirection() {
       // determine next page
       const nextPage =
         e.deltaY > 0
-          ? sections[currentPageIndex - 1]?.url
-          : sections[currentPageIndex + 1]?.url;
+          ? sections[currentPageIndex + 1]?.url
+          : sections[currentPageIndex - 1]?.url;
 
       // first or last page
       if (!nextPage) return;

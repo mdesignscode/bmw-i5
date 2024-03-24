@@ -11,6 +11,10 @@ export const sections = [
     name: "About Us",
     url: "#about",
   },
+  {
+    name: "Gallery",
+    url: "#gallery",
+  },
 ];
 
 export const parentVariants = {

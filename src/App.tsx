@@ -1,5 +1,6 @@
 import AboutUs from "./components/about";
 import Features from "./components/features";
+import Gallery from "./components/gallery";
 import Home from "./components/home";
 import Navbar from "./components/navbar";
 import PageIndicators from "./components/pageIndicators";
@@ -23,6 +24,7 @@ function App() {
       <Home />
       <Features />
       <AboutUs />
+      <Gallery />
     </div>
   );
 }
