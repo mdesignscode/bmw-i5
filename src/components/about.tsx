@@ -8,13 +8,7 @@ export default function AboutUs() {
     <Transition
       show={currentPage === "#about"}
       id="about"
-      className="w-full h-[100dvh] flex bg-[url('/bmw-hq.webp')] [background-repeat:no-repeat] [background-size:cover]"
-      enter={`transition-all duration-1000 ease-in-out`}
-      enterFrom="opacity-0 [background-position:center]"
-      enterTo="opacity-1 [background-position:top]"
-      leave="transform opacity transition-all duration-150 ease-in-out"
-      leaveFrom="opacity-1 [background-position:top]"
-      leaveTo="opacity-0 [background-position:center]"
+      className="w-full h-[100dvh] flex bg-[url('/bmw-hq.webp')] [background-repeat:no-repeat] [background-position:center] [background-size:cover]"
       unmount={false}
     >
       <div className="absolute w-full h-full top-0 left-0 bg-neutral-800 opacity-40" />

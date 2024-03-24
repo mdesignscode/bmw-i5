@@ -21,7 +21,7 @@ export default function Navbar() {
       variants={parentVariants}
       initial="hide"
       animate="show"
-      className="absolute top-4 flex justify-center w-full gap-4 md:text-xl uppercase tracking-widest font-poppinsBold z-50"
+      className="absolute top-4 flex justify-center w-full gap-4 text-sm md:text-xl uppercase tracking-widest font-poppinsBold z-50"
     >
       {sections.map(({ name, url }) => (
         <motion.a

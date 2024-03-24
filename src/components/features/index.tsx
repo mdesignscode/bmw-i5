@@ -47,6 +47,7 @@ export default function Features() {
         leave="transform opacity transition-all duration-500 ease-in-out"
         leaveFrom="opacity-1"
         leaveTo="opacity-0"
+        className="h-[100dvh]"
       >
         {features.map((feature, i) => (
           <FeatureSlide

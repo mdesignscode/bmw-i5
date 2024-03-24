@@ -85,7 +85,17 @@ function HeroDescriptionDesktop() {
 
 function HeroDescriptionMobile() {
   return (
-    <section className="flex-1 self-end flex md:hidden gap-4 text-gray-300 italic text-sm pr-6 pt-8">
+    <Transition.Child
+      unmount={false}
+      enter={`transform opacity transition-all duration-500 ease-in-out`}
+      enterFrom="translate-y-[100px] opacity-0"
+      enterTo="translate-y-0 opacity-1"
+      leave="transform opacity transition-all duration-500 ease-in-out"
+      leaveFrom="translate-y-0 opacity-0"
+      leaveTo="translate-y-full opacity-1"
+      as="section"
+      className="flex-1 self-end flex md:hidden gap-4 text-gray-300 italic text-sm pr-6 pt-8"
+    >
       <ul className="flex-1">
         <li className="mr-auto font-semibold">Max HP</li>
         <li className="mr-auto font-semibold">0-60 MPH</li>
@@ -99,6 +109,6 @@ function HeroDescriptionMobile() {
         <li>$70,100</li>
         <li>130 MPH</li>
       </ul>
-    </section>
+    </Transition.Child>
   );
 }
