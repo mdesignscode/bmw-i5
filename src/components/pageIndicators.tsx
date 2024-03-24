@@ -1,26 +1,31 @@
 import classNames from "classnames";
-import { sections } from "./constants";
+import { motion } from "framer-motion";
+import { parentVariants, sections } from "./constants";
 import { useGlobalStore } from "../context/global";
-import { Transition } from "@headlessui/react";
+
+const childrenVariants = {
+  show: {
+    x: 0,
+  },
+  hide: {
+    x: 50,
+  },
+};
 
 export default function PageIndicators() {
   const { currentPage, setNextPage } = useGlobalStore();
 
   return (
-    <Transition
-      show={true}
-      appear={true}
-      enter={`transform opacity transition-all duration-500 ease-in-out`}
-      enterFrom="translate-x-[100px] opacity-0"
-      enterTo="translate-x-0 opacity-1"
-      leave="transform opacity transition-all duration-500 ease-in-out"
-      leaveFrom="translate-x-0 opacity-0"
-      leaveTo="translate-x-full opacity-1"
+    <motion.div
+      variants={parentVariants}
+      initial="hide"
+      animate="show"
       className="absolute right-0 z-50 h-full flex flex-col"
     >
       <div role="navigation" className="my-auto space-y-6 px-4 md:px-9">
         {sections.map(({ url, name }) => (
-          <a
+          <motion.a
+            variants={childrenVariants}
             onClick={() => setNextPage(url)}
             href={url}
             key={name}
@@ -37,9 +42,9 @@ export default function PageIndicators() {
               }
             )}
             aria-label={`Navigate to ${name}`}
-          ></a>
+          ></motion.a>
         ))}
       </div>
-    </Transition>
+    </motion.div>
   );
 }

@@ -12,3 +12,15 @@ export const sections = [
     url: "#about",
   },
 ];
+
+export const parentVariants = {
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+  hide: {
+    opacity: 0,
+  },
+}

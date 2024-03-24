@@ -14,7 +14,6 @@ export default function Home() {
       as="section"
       unmount={false}
       show={!currentPage || currentPage === "#home"}
-      appear={true}
       id="home"
       className="h-[100dvh] md:block flex flex-col overflow-hidden w-screen px-8 pt-32 md:px-24 md:pt-28 bg-home"
     >

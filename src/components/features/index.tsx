@@ -38,7 +38,6 @@ export default function Features() {
   return (
     <>
       <Transition
-        appear={true}
         show={currentPage === "#features"}
         id="features"
         as="section"
@@ -101,7 +100,6 @@ function FeatureSlide({
 }) {
   return (
     <Transition
-      appear={true}
       show={index === slideIndex}
       className="h-[100dvh] text-white flex flex-col md:grid justify-center grid-rows-2 md:grid-rows-none md:grid-cols-2 items-center md:px-8"
     >
